@@ -1,0 +1,3 @@
+javascript: (() => {
+    function e(e) { const t = ["k", "m", "b", "t", "q"]; var n = e.toString().slice(e.length - 1, e.length).toLowerCase(); if (isNaN(n)) { e = (e = e.replace(/ /g, "")).replace(/\$/g, ""); return parseFloat(e.slice(0, e.length - 1)) * 1e3 ** (t.findIndex((e => e == n)) + 1) } return e } const t = Array.from(document.querySelectorAll("#video-info")).map((t => ({ views: Number(e(t.textContent.split(" ")[0])), item: t.parentNode.parentNode.parentNode.parentNode.parentNode }))), n = t.sort(((e, t) => t.views - e.views)), r = document.getElementById("contents"); r.innerHTML = "", n.forEach((e => { r.append(e.item) }));
+})();
